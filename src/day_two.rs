@@ -1,10 +1,5 @@
 use crate::file;
 
-fn is_same_sequence_twice(id: &str) -> bool {
-    let (left, right) = id.split_at(id.len() / 2);
-    return left.eq(right);
-}
-
 fn get_range_ids(range: &Vec<&str>) -> (i64, i64) {
     let left_r = range[0].parse::<i64>().unwrap();
     let right_r = range[1].parse::<i64>().unwrap();
@@ -49,7 +44,9 @@ fn solve_part_one(lines: &Vec<String>) {
             let ids: Vec<_> = range.split('-').collect();
             let (left_r, right_r) = get_range_ids(&ids);
             for num in left_r..=right_r {
-                if is_same_sequence_twice(&num.to_string()) {
+                let num_to_string = num.to_string();
+                let (left, right) = num_to_string.split_at(num_to_string.len() / 2);
+                if left == right {
                     sum += num;
                 };
             }
