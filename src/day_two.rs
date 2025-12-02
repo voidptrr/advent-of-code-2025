@@ -1,10 +1,10 @@
 use crate::file;
 
-fn get_range_ids(range: &Vec<&str>) -> (i64, i64) {
+fn get_range_ids(range: &[&str]) -> (i64, i64) {
     let left_r = range[0].parse::<i64>().unwrap();
     let right_r = range[1].parse::<i64>().unwrap();
 
-    return (left_r, right_r);
+    (left_r, right_r)
 }
 
 fn solve_part_two(lines: &Vec<String>) {
