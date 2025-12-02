@@ -27,15 +27,7 @@ pub fn solve_part_two(lines: &Vec<String>) {
         }
 
         sum = sum.rem_euclid(100);
-        if sum == 0 {
-            start_at_zero = true;
-        } else {
-            start_at_zero = false;
-        }
-
-        if sum < 0 {
-            sum += 100;
-        }
+        start_at_zero = sum == 0;
     }
     println!("day_one [2] => {}", combination);
 }
