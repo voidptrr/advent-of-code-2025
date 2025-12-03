@@ -7,10 +7,10 @@ fn sub_sequence_max_by_k(values: &[u32], k: usize) -> u64 {
     for (index, &value) in values.iter().enumerate() {
         while !stack.is_empty()
             && value > *stack.last().unwrap()
-                && stack.len() - 1 + (values.len() - index) >= k
-                {
-                    stack.pop();
-                }
+            && stack.len() - 1 + (values.len() - index) >= k
+        {
+            stack.pop();
+        }
 
         if stack.len() < k {
             stack.push(value);
@@ -25,18 +25,24 @@ fn sub_sequence_max_by_k(values: &[u32], k: usize) -> u64 {
 }
 
 pub fn solve_part_two(lines: &[String]) {
-    let sum: u64 = lines.iter().map(|l| {
-        let values: Vec<u32> = l.chars().map(|c| c.to_digit(10).unwrap()).collect();
-        sub_sequence_max_by_k(&values, 12)
-    }).sum();
+    let sum: u64 = lines
+        .iter()
+        .map(|l| {
+            let values: Vec<u32> = l.chars().map(|c| c.to_digit(10).unwrap()).collect();
+            sub_sequence_max_by_k(&values, 12)
+        })
+        .sum();
     println!("day_three [2] => {}", sum);
 }
 
 pub fn solve_part_one(lines: &[String]) {
-    let sum: u64 = lines.iter().map(|l| {
-        let values: Vec<u32> = l.chars().map(|c| c.to_digit(10).unwrap()).collect();
-        sub_sequence_max_by_k(&values, 2)
-    }).sum();
+    let sum: u64 = lines
+        .iter()
+        .map(|l| {
+            let values: Vec<u32> = l.chars().map(|c| c.to_digit(10).unwrap()).collect();
+            sub_sequence_max_by_k(&values, 2)
+        })
+        .sum();
     println!("day_three [1] => {}", sum);
 }
 
