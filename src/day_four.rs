@@ -65,7 +65,7 @@ fn solve_part_one(grid: &[Vec<char>]) {
         }
     }
 
-    println!("day_four [1] => {}", count);
+    println!("day_four [2] => {}", count);
 }
 
 pub fn solve() {
