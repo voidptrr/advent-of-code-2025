@@ -1,11 +1,11 @@
 use crate::file;
 
-pub fn solve_part_two(lines: &Vec<String>) {
+pub fn solve_part_two<T: AsRef<str>>(lines: &[T]) {
     let mut sum = 50;
     let mut combination = 0;
     let mut start_at_zero = false;
     for line in lines {
-        let ref_line = line.as_str();
+        let ref_line = line.as_ref();
         let (rotation, value) = ref_line.split_at(1);
 
         let p_value = value.parse::<i32>().unwrap();
@@ -32,11 +32,11 @@ pub fn solve_part_two(lines: &Vec<String>) {
     println!("day_one [2] => {}", combination);
 }
 
-pub fn solve_part_one(lines: &Vec<String>) {
+pub fn solve_part_one<T: AsRef<str>>(lines: &[T]) {
     let mut sum = 50;
     let mut combination = 0;
     for line in lines {
-        let ref_line = line.as_str();
+        let ref_line = line.as_ref();
         let (rotation, value) = ref_line.split_at(1);
 
         let p_value = value.parse::<i32>().unwrap();

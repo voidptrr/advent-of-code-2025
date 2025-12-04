@@ -1,16 +1,16 @@
 use crate::file;
 
-fn get_range_ids(range: &[&str]) -> (i64, i64) {
-    let left_r = range[0].parse::<i64>().unwrap();
-    let right_r = range[1].parse::<i64>().unwrap();
+fn get_range_ids<T: AsRef<str>>(range: &[T]) -> (i64, i64) {
+    let left_r = range[0].as_ref().parse::<i64>().unwrap();
+    let right_r = range[1].as_ref().parse::<i64>().unwrap();
 
     (left_r, right_r)
 }
 
-fn solve_part_two(lines: &Vec<String>) {
+fn solve_part_two<T: AsRef<str>>(lines: &[T]) {
     let mut sum = 0;
     for line in lines {
-        line.split(',').for_each(|range| {
+        line.as_ref().split(',').for_each(|range| {
             let ids: Vec<_> = range.split('-').collect();
             let (left_r, right_r) = get_range_ids(&ids);
             for num in left_r..=right_r {
@@ -37,10 +37,10 @@ fn solve_part_two(lines: &Vec<String>) {
     println!("day_two [2] => {}", sum);
 }
 
-fn solve_part_one(lines: &Vec<String>) {
+fn solve_part_one<T: AsRef<str>>(lines: &[T]) {
     let mut sum = 0;
     for line in lines {
-        line.split(',').for_each(|range| {
+        line.as_ref().split(',').for_each(|range| {
             let ids: Vec<_> = range.split('-').collect();
             let (left_r, right_r) = get_range_ids(&ids);
             for num in left_r..=right_r {
