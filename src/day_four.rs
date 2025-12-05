@@ -52,7 +52,7 @@ fn solve_part_two(grid: &mut [Vec<char>]) {
         }
     }
 
-    println!("day_four [1] => {}", total_count);
+    println!("day_four [2] => {}", total_count);
 }
 
 fn solve_part_one(grid: &[Vec<char>]) {
@@ -65,7 +65,7 @@ fn solve_part_one(grid: &[Vec<char>]) {
         }
     }
 
-    println!("day_four [2] => {}", count);
+    println!("day_four [1] => {}", count);
 }
 
 pub fn solve() {
