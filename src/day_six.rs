@@ -74,12 +74,10 @@ fn solve_part_two<T: AsRef<str>>(input: &[T]) -> u64 {
 
     let mut buffer = vec![b' '; width * height];
 
-    for (y, line) in input.iter().enumerate() {
+    for (chunk, line) in buffer.chunks_exact_mut(width).zip(input.iter()) {
         let bytes_line = line.as_ref().as_bytes();
-
-        for x in 0..(bytes_line.len()) {
-            buffer[y * width + x] = bytes_line[x];
-        }
+        let len = bytes_line.len().min(width);
+        chunk[..len].copy_from_slice(&bytes_line[..len]);
     }
 
     let digits = (buffer.len() - width) / width;
