@@ -29,6 +29,8 @@ pub fn solve_part_two<T: AsRef<str>>(input: &[T]) {
     ranges.sort_by_key(|(l, _)| *l);
     let mut prev = ranges[0];
 
+    // TODO: binary search on sorted interavals
+    // Merge intervals
     for &(current_start, current_end) in &ranges[1..] {
         if current_start <= prev.1 + 1 {
             prev.1 = prev.1.max(current_end);

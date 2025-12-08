@@ -1,6 +1,7 @@
 mod day_five;
 mod day_four;
 mod day_one;
+mod day_six;
 mod day_three;
 mod day_two;
 mod file;
@@ -11,4 +12,5 @@ fn main() {
     day_three::solve();
     day_four::solve();
     day_five::solve();
+    day_six::solve();
 }
