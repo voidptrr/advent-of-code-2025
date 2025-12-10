@@ -1,6 +1,7 @@
 mod day_eight;
 mod day_five;
 mod day_four;
+mod day_nine;
 mod day_one;
 mod day_seven;
 mod day_six;
@@ -24,6 +25,7 @@ fn main() {
             "6" => day_six::solve(),
             "7" => day_seven::solve(),
             "8" => day_eight::solve(),
+            "9" => day_nine::solve(),
             _ => eprintln!("Invalid day"),
         }
     } else {
