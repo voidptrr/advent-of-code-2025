@@ -82,14 +82,14 @@ fn solve_part_two(coords: &[Point]) -> usize {
         })
         .collect();
 
-    let max_area = rectangles
+    
+
+    rectangles
         .iter()
         .filter(|r| edges.iter().all(|edge| !r.overlaps(edge)))
         .map(|r| r.area())
         .max()
-        .unwrap_or(0);
-
-    max_area
+        .unwrap_or(0)
 }
 
 fn solve_part_one(coords: &[Point]) -> usize {

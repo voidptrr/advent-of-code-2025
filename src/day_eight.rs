@@ -125,7 +125,7 @@ fn solve_both<T: AsRef<str>>(input: &[T]) -> (usize, usize) {
     while let Some((_, (a, b))) = bh.pop() {
         if index == 1000 {
             let n = 3;
-            circuit.box_sets.sort_by(|a, b| b.len().cmp(&a.len()));
+            circuit.box_sets.sort_by_key(|b| std::cmp::Reverse(b.len()));
 
             let top_sets = &circuit.box_sets[..n];
             let product_of_lengths: usize = top_sets.iter().map(|s| s.len()).product();

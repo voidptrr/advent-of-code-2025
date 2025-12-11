@@ -1,10 +1,12 @@
 mod day_eight;
+mod day_eleven;
 mod day_five;
 mod day_four;
 mod day_nine;
 mod day_one;
 mod day_seven;
 mod day_six;
+mod day_ten;
 mod day_three;
 mod day_two;
 mod file;
@@ -26,6 +28,8 @@ fn main() {
             "7" => day_seven::solve(),
             "8" => day_eight::solve(),
             "9" => day_nine::solve(),
+            "10" => day_ten::solve(),
+            "11" => day_eleven::solve(),
             _ => eprintln!("Invalid day"),
         }
     } else {
